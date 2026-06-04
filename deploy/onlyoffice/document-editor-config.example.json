@@ -1,0 +1,39 @@
+{
+  "document": {
+    "permissions": {
+      "edit": true,
+      "download": true,
+      "print": true,
+      "comment": true,
+      "review": true,
+      "copy": true,
+      "modifyFilter": true,
+      "modifyContentControl": true,
+      "fillForms": true
+    }
+  },
+  "editorConfig": {
+    "mode": "edit",
+    "lang": "zh-CN",
+    "region": "zh-CN",
+    "customization": {
+      "autosave": true,
+      "forcesave": true,
+      "compactToolbar": false,
+      "toolbarNoTabs": false,
+      "hideRightMenu": false,
+      "comments": true,
+      "chat": false,
+      "feedback": false,
+      "help": false,
+      "plugins": false,
+      "macros": false,
+      "unit": "cm",
+      "goback": {
+        "blank": false,
+        "text": "返回文档列表",
+        "url": "${DOC_LIST_URL}"
+      }
+    }
+  }
+}
