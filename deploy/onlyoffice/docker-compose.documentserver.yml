@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  onlyoffice-documentserver:
+    image: onlyoffice/documentserver:latest
+    container_name: onlyoffice-documentserver
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      JWT_ENABLED: "true"
+      JWT_SECRET: "change_this_jwt_secret"
+      JWT_HEADER: "Authorization"
+      TZ: "Asia/Shanghai"
+    volumes:
+      - /data/onlyoffice/logs:/var/log/onlyoffice
+      - /data/onlyoffice/data:/var/www/onlyoffice/Data
+      - /data/onlyoffice/lib:/var/lib/onlyoffice
+      - /data/onlyoffice/db:/var/lib/postgresql
+      - /data/onlyoffice/fonts:/usr/share/fonts/truetype/custom
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/healthcheck"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
